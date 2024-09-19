@@ -1,0 +1,53 @@
+public class OneCard{
+
+    // Attributes
+    String owner;
+    double balance;
+
+    //Constructor
+    public OneCard(String name, double amt){
+        this.owner = name;
+        this.balance = amt;
+
+    }
+
+    //Methods
+    public void deposit(double amt){
+        this.balance += amt;
+    }
+
+    public boolean canAfford(double amt){
+        return this.balance >=amt;
+    }
+    public void spend(double amt){
+        if(this.canAfford(amt)){
+            this.balance -= amt;
+        }else{
+            System.out.println("Low balance! Cannot afford");
+        }   
+    }
+    public double getBalance(){
+        return this.balance;
+    }
+
+    public String getOwner(){
+        return this.owner;
+    }
+
+    public void setOwner(String new_name){
+        if(this.owner != new_name){
+            this.owner = new_name;
+        } else {
+            System.out.println("Name not changed.");
+        }
+    }
+    public static void main(String[]args){
+        OneCard myCard = new OneCard("Jordan", 3.00);
+        System.out.println(myCard.owner);
+        OneCard anotherCard = new OneCard("Ab", 13.00);
+        System.out.println(anotherCard.owner);
+        myCard.deposit(10);
+    }
+
+
+}
