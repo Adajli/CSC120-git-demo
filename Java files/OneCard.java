@@ -59,7 +59,7 @@ public class OneCard{
     }
 
     public static void main(String[]args) {
-        Student me = new Student("Jordan");
+        Student me = new Student("Jordan",new School("Smith College",20));
         OneCard myCard = new OneCard(me, 3.00);
         try {
             myCard.spend(10.);
