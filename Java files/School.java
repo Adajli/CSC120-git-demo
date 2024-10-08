@@ -44,6 +44,11 @@ public class School{
 
     public static void main(String[]args){
         School smith = new School("Smith College", 2800);
+        System.out.println(smith);
+        Student me = new Student("Jordan", smith);
+        System.out.println(smith);
+
+
     }
 
 
